@@ -1,19 +1,26 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from './screens/login/index.js';
+import { Register } from './screens/Register/index.js';
+import { Home } from './screens/Home/index.js';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">Hello World!
-      <br />
-      <br />
-      <br />
-      <img src="logoOpt.svg" alt="Logo Rainbow Quiz (arco-íris circular formando a letra Q)" />
-      <br />
-      <br />Rainbow Quiz!
-        
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home"
+          element={<Home />} />
+      </Routes>
+      <Routes>
+        <Route path="/login"
+          element={<Login />} />
+      </Routes>
+      <Routes>
+        <Route path="/register"
+          element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App
